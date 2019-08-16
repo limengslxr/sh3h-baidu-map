@@ -30,6 +30,22 @@ npm install react-native-sh3h-baidu-map --save
 #### Android Studio
 `react-native link react-native-sh3h-baidu-map`
 
+<uses-permission android:name="android.permission.INTERNET" />
+<!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+<application>  
+    <meta-data  
+        android:name="com.baidu.lbsapi.API_KEY"  
+        android:value="开发者 key" />  
+</application>
+
+
 #### IOS/Xcode
 使用 pod
 
@@ -49,15 +65,15 @@ Podfile 增加
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-sh3h-baidu-map', :podspec => '../node_modules/react-native-baidu-map/lib/ios/react-native-sh3h-baidu-map.podspec'
+  pod 'react-native-baidu-map', :podspec => '../node_modules/react-native-sh3h-baidu-map/ios/react-native-baidu-map.podspec'
 ```
 
 ##### AppDelegate.m init 初始化
-    #import "RCTBaiduMapViewManager.h"
+    #import "BaiduMapViewManager.h"
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     {
         ...
-        [RCTBaiduMapViewManager initSDK:@"api key"];
+        [BaiduMapViewManager initSDK:@"api key"];
         ...
     }
 

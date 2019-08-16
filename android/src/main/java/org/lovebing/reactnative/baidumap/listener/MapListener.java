@@ -7,7 +7,7 @@
 
 package org.lovebing.reactnative.baidumap.listener;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapPoi;

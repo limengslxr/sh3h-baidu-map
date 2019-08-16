@@ -8,7 +8,6 @@
 package org.lovebing.reactnative.baidumap;
 
 import android.os.Looper;
-import android.support.annotation.MainThread;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +19,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 
 import com.facebook.react.uimanager.ViewManager;
 
-import org.lovebing.reactnative.baidumap.module.GeolocationModule;
 import org.lovebing.reactnative.baidumap.module.MapAppModule;
 import org.lovebing.reactnative.baidumap.uimanager.*;
 
@@ -33,7 +31,6 @@ public class BaiduMapPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.asList(
-                new GeolocationModule(reactContext),
                 new MapAppModule(reactContext)
         );
     }
@@ -54,9 +51,7 @@ public class BaiduMapPackage implements ReactPackage {
         );
     }
 
-    @MainThread
     protected void init(ReactApplicationContext reactContext) {
-        Looper.prepare();
         SDKInitializer.initialize(reactContext.getApplicationContext());
     }
 }
