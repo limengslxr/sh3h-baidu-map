@@ -28,7 +28,8 @@ npm install react-native-sh3h-baidu-map --save
 ### 原生模块导入
 
 #### Android Studio
-`react-native link react-native-sh3h-baidu-map`
+```
+react-native link react-native-sh3h-baidu-map
 
 <uses-permission android:name="android.permission.INTERNET" />
 <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
@@ -44,7 +45,7 @@ npm install react-native-sh3h-baidu-map --save
         android:name="com.baidu.lbsapi.API_KEY"  
         android:value="开发者 key" />  
 </application>
-
+```
 
 #### IOS/Xcode
 使用 pod
@@ -65,7 +66,7 @@ Podfile 增加
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-baidu-map', :podspec => '../node_modules/react-native-sh3h-baidu-map/ios/react-native-baidu-map.podspec'
+  pod 'react-native-sh3h-baidu-map', :podspec => '../node_modules/react-native-sh3h-baidu-map/ios/react-native-sh3h-baidu-map.podspec'
 ```
 
 ##### AppDelegate.m init 初始化
